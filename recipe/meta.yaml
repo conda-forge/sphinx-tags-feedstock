@@ -1,28 +1,27 @@
 {% set name = "sphinx-tags" %}
-{% set version = "0.3.0" %}
+{% set version = "0.3.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: a93173a85c886a36042cdacd42b4f6c53774cd9b76694bae22103daa3c4219c1
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/sphinx_tags-{{ version }}.tar.gz
+  sha256: 18b6eedba095665b49a19ca479fc0afde0b24644ffb35633d0f6bf982a37ab6e
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   host:
-    - python >=3.6
-    - pip
+    - python >=3.7
     - flit-core >=3.2,<4
+    - pip
   run:
-    - python >=3.6
-    - sphinx >4
-    - pre-commit
+    - python >=3.7
+    - sphinx >=5.1
 
 test:
   imports:
