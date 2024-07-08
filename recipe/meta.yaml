@@ -1,5 +1,5 @@
 {% set name = "sphinx-tags" %}
-{% set version = "0.3.1" %}
+{% set version = "0.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/sphinx_tags-{{ version }}.tar.gz
-  sha256: 18b6eedba095665b49a19ca479fc0afde0b24644ffb35633d0f6bf982a37ab6e
+  sha256: 3065219bacf47567c706f2237d5665b22f3a5167367b4c4568bcda4371a5359d
 
 build:
   noarch: python
